@@ -6,23 +6,23 @@ defmodule TableServerFive do
   # i.e. Client calls the following functions #
   # ----------------------------------------- #
   def start_link(start_number, server_name) do
-    GenServer.start_link(__MODULE__, start_number, name: {:global, {:servername, server_name}})
+    # Insert start_ink here
   end
 
   def init(start_number) do
-    {:ok, start_number}
+    # Insert init here
   end
 
   def stop(server_name) do
-    GenServer.stop({:global, {:servername, server_name}})
+    # Insert stop here
   end
 
   def ping(server_name) do
-    GenServer.call({:global, {:servername, server_name}}, :ping)
+    # Insert ping here
   end
 
   def pong(server_name) do
-    GenServer.call({:global, {:servername, server_name}}, :pong)
+    # Insert pong here
   end
 
   # ----------------------------------------- #
@@ -30,11 +30,11 @@ defmodule TableServerFive do
   # i.e. Server calls the following functions #
   # ----------------------------------------- #
   def handle_call(:ping, _from, current_number) do
-    {:reply, {:ok, current_number}, current_number+1}
+    # Insert :ping handle_call here
   end
 
   def handle_call(:pong, _from, current_number) do
-    {:reply, {:ok, current_number}, current_number+1}
+    # Insert :pong handle_call here
   end
 
 end

@@ -38,16 +38,11 @@ defmodule TableServerSix do
   end
 
   defp global_server_name(server_name) do
-    {:global, {:servername, server_name}}
+    #
   end
 
   defp try_call(server_name, message) do
-    case GenServer.whereis(global_server_name(server_name)) do
-      nil ->
-        {:error, :invalid_server}
-      servername ->
-        GenServer.call(servername, message)
-    end
+    #
   end
 
 end

@@ -3,15 +3,13 @@ defmodule TableSupervisorFour do
   use Supervisor
 
   def start_link(arg) do
-    Supervisor.start_link(__MODULE__, arg, name: __MODULE__)
+
   end
 
   def init(_arg) do
-    children = [
-      {TableServerFour, 0}
-    ]
+    # setup children
 
-    # Now we start the supervisor with the children and a strategy
-    Supervisor.init(children, strategy: :one_for_one)
+    # start children
+    
   end
 end

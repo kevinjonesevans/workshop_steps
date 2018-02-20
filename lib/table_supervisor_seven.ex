@@ -7,14 +7,11 @@ defmodule TableSupervisorSeven do
   end
 
   def init(_arg) do
+    # ** Need to start 2 children with different names **
     children = [
       %{
          id: "7021M",
-         start: {TableServerSeven, :start_link, [[0, 999999], "7021M"]}
-       },
-      %{
-         id: "7122M",
-         start: {TableServerSeven, :start_link, [[1000000, 1999999], "7122M"]}
+         start: {TableServerSeven, :start_link, [0, "7021M"]}
        }
     ]
 

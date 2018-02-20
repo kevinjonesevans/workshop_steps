@@ -3,7 +3,7 @@ defmodule TableProcessTwo do
     receive do
       :ping -> IO.puts('received ping')
     end
-    ping()
+    # insert recursion
   end
 
   def start do

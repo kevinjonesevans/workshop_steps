@@ -6,7 +6,7 @@ defmodule TableServerTwo do
   # i.e. Client calls the following functions #
   # ----------------------------------------- #
   def start_link(_) do
-    GenServer.start_link(__MODULE__, [], name: __MODULE__)
+
   end
 
   def init(args) do
@@ -14,7 +14,7 @@ defmodule TableServerTwo do
   end
 
   def ping() do
-    GenServer.call(__MODULE__, :ping)
+
   end
 
   # ----------------------------------------- #

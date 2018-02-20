@@ -2,10 +2,10 @@ defmodule TableServerOne do
   use GenServer
 
   def init(args) do
-    {:ok, args}
+    # initialize
   end
-  
+
   def handle_call(:ping, _from, []) do
-    {:reply, {:ok}, []}
+    # insert reply
   end
 end

@@ -4,6 +4,8 @@ defmodule TableProcessOneTest do
   test "send a ping, process dies" do
     pid = TableProcessOne.start
 
+    :timer.sleep(1)
+
     assert true == Process.alive?(pid)
 
     send(pid, :ping)

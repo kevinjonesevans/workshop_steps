@@ -3,10 +3,15 @@ defmodule TableSupervisorFive do
   use Supervisor
 
   def start_link(arg) do
-    # Insert start_ink here
+    Supervisor.start_link(__MODULE__, arg, name: __MODULE__)
   end
 
   def init(_arg) do
-    # Insert init here
+    children = [
+      worker(TableServerFive, [0, "021M"])
+    ]
+    opts = [strategy: :one_for_one, name: TableServerFive.Supervisor]
+
+    supervise(children, opts)
   end
 end
